@@ -1,11 +1,17 @@
 {
   "name": "core",
-  "version": "1.0.0",
-  "description": "",
+  "version": "18.0.0",
+  "description": "Core is an innovative proxy with many features for the users experience.",
   "main": "server/index.js",
   "scripts": {
     "start": "node server/index.js"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "GalacticNetwork",
+  "license": "ISC",
+  "keywords": [
+    "proxy",
+    "unblocker",
+    "web",
+    "browser"
+  ]
 }
