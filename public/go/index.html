@@ -1,38 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Core | Transport</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.4.2/css/all.css"
+    />
+    <link
+      id="favicon"
+      rel="icon"
+      type="image/x-icon"
+      href="/public/resources/images/main.png"
+    />
     <style>
-body {
-    background-color:var(--background);
-    color:var(--text);
-}
-.nav {
-    justify-content:center;
-    text-align:center;
-    width:100%;
-    position:absolute;
-    top:1%;
-    left:50%;
-    left:0;
-    right:0;
-    background:#1A1B26;
-}
+      @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
+      @import url("/public/resources/css/themes.css");
+      body {
+        background-color: var(--background);
+        color: var(--text);
+        font-family: "Figtree", sans-serif;
+        overflow: hidden;
+      }
 
-.nav input {
-height:40px;
-}
+      i {
+        color: white;
+      }
+
+      .nav {
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        top: -20px;
+        left: 0;
+        right: 0;
+        background: var(--background);
+        position: fixed;
+        transition: 0.6s;
+        height: 70px;
+      }
+
+      .nav input {
+        height: 40px;
+      }
+      .nav:hover {
+        transform: translateY(25px);
+      }
+      .nav .icon {
+        display: flex;
+        align-items: center;
+      }
+      .nav .icon img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+      .nav .title {
+        flex-grow: 1;
+        text-align: center;
+        font-size: 1.2em;
+      }
+      .nav .buttonrow1 {
+        float: left;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .nav .buttonrow1 .btn {
+        width: 50px;
+        height: 50px;
+        background-color: var(--accent);
+        color: var(--text);
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 10px;
+        border: 0.5px solid var(--accent);
+        transition: 0.5s;
+        margin-right: 12px;
+      }
+      .nav .buttonrow2 {
+        float: right;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .nav .buttonrow2 .btn {
+        width: 50px;
+        height: 50px;
+        background-color: var(--accent);
+        color: var(--text);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 10px;
+        border-radius: 10px;
+        border: 0.5px solid var(--accent);
+        transition: 0.5s;
+        margin-left: 12px;
+      }
+
+      .nav .buttonrow1 .btn:hover {
+        transform: scale(1.09);
+      }
+      .nav .buttonrow2 .btn:hover {
+        transform: scale(1.09);
+      }
+
+      button {
+        color: var(--secondary-accent);
+      }
+      @media screen and (max-width: 768px) {
+        .nav .title {
+          font-size: 1em;
+        }
+        .nav .icon img {
+          width: 30px;
+          height: 30px;
+        }
+        .nav .buttonrow1 .btn {
+          width: 25px;
+          height: 25px;
+        }
+        .nav .buttonrow2 .btn {
+          width: 25px;
+          height: 25px;
+        }
+      }
+      input {
+        width: 525px;
+        background-color: transparent;
+        border: 1.5px var(--accent) solid;
+        border-radius: 10px;
+        font-size: 19px;
+        outline: none;
+        text-align: center;
+        color: var(--text);
+        height: 30px;
+        transition: color 100ms;
+        margin: 10px;
+      }
+      input::placeholder {
+        text-align: center;
+      }
+      a {
+        text-decoration: none;
+      }
+      iframe {
+        display: block;
+        background: var(--secondary-accent);
+        border: none;
+        height: 100vh;
+        width: 100vw;
+        overflow-x: hidden;
+      }
     </style>
-</head>
-<body theme="classic">
+  </head>
+  <body theme="main">
     <div class="nav">
-        <h2>this where da stuff go</h2>
+      <div class="buttonrow1">
+        <a href="/">
+          <div class="icon home">
+            <img style="margin: 10px" src="/public/resources/images/main.png" />
+          </div>
+        </a>
+        <button class="btn" onclick="inspect();">
+          <i class="fa-light fa-code"></i>
+        </button>
+        <button class="btn" onclick="ab();">
+          <i class="fa-light fa-eye-slash"></i>
+        </button>
+        <button class="btn" onclick="toggleFullscreen();">
+          <i class="fa-light fa-expand-wide"></i>
+        </button>
+      </div>
+      <input
+        class="input"
+        id="uv-address"
+        type="text"
+        placeholder="What's On Your Mind?"
+        class="search"
+        autocomplete="off"
+      />
+      <div class="buttonrow2">
+        <button class="btn" onclick="back();"><i class="fa-light fa-chevron-left"></i></button>
+        <button class="btn" onclick="reload();"><i class="fa-light fa-arrows-rotate"></i></button>
+        <button class="btn" onclick="forward();"><i class="fa-light fa-chevron-right"></i></button>
+        <button class="btn"><i class="fa-light fa-bars"></i></button>
+      </div>
     </div>
-    <iframe src="" class="iframe" id="searchFrame" style="bottom: 0" name="Iframe" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="100%" width="100%" allowfullscreen></iframe>
-</body>
-<script>
+    <iframe
+      src=""
+      class="iframe"
+      id="searchFrame"
+      style="bottom: 0"
+      name="Iframe"
+      scrolling="yes"
+      frameborder="0"
+      marginheight="0px"
+      marginwidth="0px"
+      height="100%"
+      width="100%"
+      allowfullscreen
+    ></iframe>
+    <script></script>
+  </body>
+  <script src="/public/resources/js/themes.js"></script>
+  <script>
+    function reload() {
+      document.getElementById("searchFrame").src =
+        document.getElementById("searchFrame").src;
+    }
+    function back() {
+      var iframe = document.getElementById("searchFrame");
+      if (iframe.contentWindow.history.length > 0) {
+        iframe.contentWindow.history.back();
+      }
+    }
 
-</script>
+    function forward() {
+      var iframe = document.getElementById("searchFrame");
+      if (iframe.contentWindow.history.length > 0) {
+        iframe.contentWindow.history.forward();
+      }
+    }
+    function toggleFullscreen() {
+      let elem = document.querySelector(".iframe");
+
+      if (!document.fullscreenElement) {
+        elem.requestFullscreen().catch((err) => {
+          alert(
+            `Error attempting to enable fullscreen mode: ${err.message} (${err.name})`
+          );
+        });
+      } else {
+        document.exitFullscreen();
+      }
+    }
+    function inspect() {
+      const proccy = document.getElementById("searchFrame");
+      if (!proccy) return;
+
+      const proccyWindow = proccy.contentWindow;
+      const proccyDocument = proccy.contentDocument;
+
+      if (!proccyWindow || !proccyDocument) return;
+
+      if (proccyWindow.eruda?._isInit) {
+        proccyWindow.eruda.destroy();
+      } else {
+        let script = proccyDocument.createElement("script");
+        script.src = "https://cdn.jsdelivr.net/npm/eruda";
+        script.onload = function () {
+          if (!proccyWindow) return;
+          proccyWindow.eruda.init();
+          proccyWindow.eruda.show();
+        };
+        proccyDocument.head.appendChild(script);
+      }
+    }
+    function ab() {
+      let iframe =
+        '<iframe src="' +
+        window.location.href +
+        '" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:100%;width:100%;position:absolute;top:0px;left:0px;right:0px;bottom:0px;border:none;" allowfullscreen=""></iframe>';
+      let newWindow = window.open("about:blank");
+      newWindow.document.write(iframe);
+      newWindow.document.close();
+      window.location.replace("https://nasa.gov");
+    }
+  </script>
 </html>

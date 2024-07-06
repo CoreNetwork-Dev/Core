@@ -1,10 +1,19 @@
+function setTheme(theme) {
+    document.body.setAttribute('theme', theme);
+    localStorage.setItem('theme', theme);
+}
+
+function initTheme() {
+    const savedTheme = localStorage.getItem('theme') || 'main';
+    setTheme(savedTheme);
+}
+
 const themeSelect = document.getElementById('theme-select');
+if (themeSelect) {
+    themeSelect.addEventListener('change', () => {
+        const selectedTheme = themeSelect.value;
+        setTheme(selectedTheme);
+    });
+}
 
-themeSelect.addEventListener('change', () => {
-    const selectedTheme = themeSelect.value;
-    document.body.setAttribute('theme', selectedTheme);
-    localStorage.setItem('theme', selectedTheme);
-});
-
-document.body.setAttribute('theme', localStorage.getItem('theme') || 'main');
-themeSelect.value = localStorage.getItem('theme') || 'main';
+initTheme();

@@ -11,7 +11,7 @@ body[theme="light"] {
     --text:black;
     --nav: #afafb1;
     --accent:#c8c7c7;
-    --secondary-accent: black;
+    --secondary-accent: rgb(133, 133, 133);
 }
 
 body[theme="mocha"] {
