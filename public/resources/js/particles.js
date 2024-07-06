@@ -12,7 +12,7 @@ particlesJS("particles-js", {
         "value": "#ffffff"
       },
       "shape": {
-        "type": "circle",
+        "type": "star",
         "stroke": {
           "width": 0,
           "color": "#000000"
@@ -37,7 +37,7 @@ particlesJS("particles-js", {
         }
       },
       "size": {
-        "value": 3,
+        "value": 5,
         "random": true,
         "anim": {
           "enable": false,

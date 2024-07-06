@@ -1,4 +1,23 @@
 body[theme="main"] {
-    --bgcolor:#1A1B26;
-    --text: white;
+    --background:#1A1B26;
+    --text: #CAD3F5;
+    --nav: #313244;
+    --accent:#11111b;
+    --secondary-accent: #181825;
+}
+
+body[theme="light"] {
+    --background:lightgray;
+    --text:black;
+    --nav: #afafb1;
+    --accent:#c8c7c7;
+    --secondary-accent: black;
+}
+
+body[theme="mocha"] {
+    --background:#967969;
+    --text:#ffa2e6;
+    --nav: #796c65;
+    --accent:#c47f5a;
+    --secondary-accent:#FDE0DC;
 }

@@ -4,17 +4,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Core</title>
-    <link rel="icon" type="image/x-icon" href="/resources/images/core.png">
-    <link rel="stylesheet" href="/resources/css/main.css" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="./resources/images/main.png">
+    <link rel="stylesheet" href="./resources/css/main.css" />
+    <link rel="stylesheet" href="./resources/css/navbar.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/all.css">
 </head>
 <body theme="main">
-<div id="particles-js">
+    <div class="settings-tab" id="settingsTab">
+        <div class="section">
+        <div onclick="closeSettings()"><img id="close" class="icons" src="./resources/images/icons/close.png"></div>
+         <h3>Themes</h3>
+         <select id="theme-select">
+             <option value="main">Main Theme</option>
+             <option value="mocha">Cappuchin Mocha</option>
+             <option value="light">Light Theme</option>
+         </select>
+         <h3>About:Blank Cloaking</h3>
+         <button onclick="openIframe();">About:Blank Cloak</button>
+         <button onclick="buffedIframe();">BUFFED About:Blank Cloak</button>
+         <h5>Automatic about:blank</h5>
+         <button onclick="enableAboutBlank()">Enable</button>
+         <button onclick="disableAboutBlank()">Disable</button>
+         <h3>Tab Cloaking</h3>
+         <input type="text" id="titleInput" placeholder="title">
+         <input type="url" id="faviconInput" placeholder="favicon">
+         <br style="margin:100px;">
+         <button onclick="applyCloak()">Apply</button>
+         <button onclick="resetCloak()">Reset Cloak</button>
+         </div>
+        </div>
+    <div class="menu hidden" id="menu">
+        <div class="grid">
+            <div class="icon home">
+                <img src="./resources/images/main.png">
+            </div>
+            <div id="time">
+                <p id="time-text"></p>
+                </div>
+                <div onclick="openSettings()" class="icon settings">
+                    <img src="./resources/images/icons/settings.png">
+                </div>
+            <div class="icon apps">
+                <img src="./resources/images/icons/apps.png">
+            </div>
+        </div>
+    </div>
+    <div id="content">
 <div class="center">
     <h1>Core</h1>
-    <input id="uv-address" type="text" placeholder="Search privately.." class="search" autocomplete="off"/>
+    <div class="search-container">
+        <div class="search-icon">
+            <i class="fa-thin fa-magnifying-glass"></i>
+            </div>
+    <input class="input" id="uv-address" type="text" placeholder="What's On Your Mind?" class="search" autocomplete="off"/>
+</div> 
 </div>
 </div>
 </body>
-<script src='https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'></script>
-<script src="/resources/js/particles.js"></script>
+<script>
+   let initialTitle = document.title;
+let initialFavicon = document.getElementById('favicon').getAttribute('href');
+
+function applyCloak() {
+    const titleInput = document.getElementById('titleInput').value;
+    if (titleInput) {
+        document.title = titleInput;
+    }
+
+    const faviconInput = document.getElementById('faviconInput').value;
+    if (faviconInput) {
+        const faviconLink = document.getElementById('favicon');
+        faviconLink.href = faviconInput.startsWith('https://') ? faviconInput : 'https://' + faviconInput;
+    }
+}
+
+function resetCloak() {
+    document.title = initialTitle;
+    const faviconLink = document.getElementById('favicon');
+    faviconLink.href = initialFavicon;
+
+    document.getElementById('titleInput').value = '';
+    document.getElementById('faviconInput').value = '';
+}
+
+</script>
+<script>
+const menu = document.getElementById('menu');
+
+document.addEventListener('keydown', function(e) {
+    if (e.key.toLowerCase() === '/') {
+        menu.classList.toggle("hidden");
+        
+        if (menu.classList.contains("hidden")) {
+            menu.style.pointerEvents = "none";
+        } else {
+            menu.style.pointerEvents = "auto";
+        }
+    }
+});
+
+function openSettings() {
+  document.getElementById('settingsTab').style.display = 'block';
+  document.getElementById('content').style.filter = 'blur(10px)';
+}
+
+function closeSettings() {
+  document.getElementById('settingsTab').style.display = 'none';
+  document.getElementById('content').style.filter = 'none';
+}
+</script>
+<script src="./resources/js/time.js"></script>
+<script src="./resources/js/themes.js"></script>
+<script src="./resources/js/settings/ab.js"></script>
+<script src="./resources/js/settings/auto.js"></script>
 </html>
