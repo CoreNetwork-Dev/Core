@@ -21,3 +21,44 @@ body[theme="mocha"] {
     --accent:#c47f5a;
     --secondary-accent:#FDE0DC;
 }
+
+body[theme="frappe"] {
+    --background:#0D0D1F;
+    --text:#D9E0EE;
+    --nav: #4E4C5E;
+    --accent:#B8C0E0;
+    --secondary-accent:#69667E;
+}
+
+body[theme="latte"] {
+    --background:#201A1A;
+    --text:#F4E0DB;
+    --nav:#5E5151;
+    --accent:#7A6969;
+    --secondary-accent:AFA4A4;
+}
+
+body[theme="rogue-red"] {
+    --background:#D04343;
+    --text:white;
+    --nav:#B82B2B;
+    --accent:#9C0909;
+    --secondary-accent:#b11d1d;
+}
+
+body[theme="AYO"] {
+    --background:black;
+    --text:white;
+    --nav:orange;
+    --accent:rgb(212, 138, 0);
+    --secondary-accent:rgb(223, 145, 0);
+    --accent-lol:rgb(229, 149, 0);
+}
+
+body[theme="black"] {
+    --background:black;
+    --text:white;
+    --nav:gray;
+    --accent:lightgray;
+    --secondary-accent:rgb(237, 228, 228);
+}

@@ -1,185 +1,206 @@
-@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
 @import url("/public/resources/css/themes.css");
 * {
-  padding:0;
-  margin:0;
+  padding: 0;
+  margin: 0;
 }
 body {
-    background-color: var(--background);
-    color:var(--text);
-    font-family: 'Figtree', sans-serif;
-    overflow-x:hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+  background-color: var(--background);
+  color: var(--text);
+  font-family: "Figtree", sans-serif;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
-
 .center {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: 'Figtree', sans-serif;
-  }
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Figtree", sans-serif;
+}
 
-  .center h1 {
-    text-align: center;
-    color:var(--text);
-    text-shadow: 0px 0px 10px 10px var(--secondary-accent);
-    margin:10px;
-    font-size:50px;
-  }
+.center h1 {
+  text-align: center;
+  color: var(--text);
+  text-shadow: 0px 0px 10px 10px var(--secondary-accent);
+  margin: 10px;
+  font-size: 50px;
+}
 
-  input {
-    width: 525px;
-    background-color: transparent;
-    border: 1.5px var(--accent) solid;
-    border-radius: 30px;
-    font-size: 19px;
-    outline: none;
-    text-align: left;
-    padding-left: 50px;
-    color: var(--text);
-    height: 50px;
-    transition: color 100ms;
-  }
+input {
+  width: 525px;
+  background-color: transparent;
+  border: 1.5px var(--accent) solid;
+  border-radius: 30px;
+  font-size: 19px;
+  outline: none;
+  text-align: left;
+  padding-left: 50px;
+  color: var(--text);
+  height: 50px;
+  transition: color 100ms;
+}
 
-  .search-container {
-    position: relative;
-    display: inline-block;
-  }
+input::placeholder {
+  color: var(--text);
+}
 
-  .search-icon {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none;
-    cursor:default;
-  }
+.search-container {
+  position: relative;
+  display: inline-block;
+}
 
-  .settings-tab {
-    position: fixed;
-    top: 64%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--accent);
-    color: white;
-    padding: 20px;
-    border-radius: 5px;
-    display: none;
-    z-index: 999;
-    width: 35%;
-    text-align: center;
-    justify-content:center;
-    align-items:center;
-  }
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  cursor: default;
+}
 
+.settings-tab {
+  position: fixed;
+  top: 64%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--accent);
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  display: none;
+  z-index: 999;
+  width: 45%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
 
-  .icons {
-    width:50px;
-    margin:0;
-  }
+.icons {
+  width: 50px;
+  margin: 0;
+}
 
-  #close {
-    cursor:pointer;
-    left:15px;
-    top:15px;
-    position:fixed;
-    margin:0;
-  }
+#close {
+  cursor: pointer;
+  left: 15px;
+  top: 15px;
+  position: fixed;
+  margin: 0;
+}
 
-  select {
-    font-family: 'Figtree', sans-serif;
-    align-items: center;
-    padding: 15px;
-    width: 150px;
-    border: none;
-    border-radius: 5px;
-    background-color: var(--accent);
-    color: var(--text);
-    box-shadow: 0 0 10px var(--secondary-accent);
-    transition:1s;
-    text-align:center;
-  }
-   select:focus {
-    outline: none;
-    background-color: var(--accent);
-  }
+select {
+  font-family: "Figtree", sans-serif;
+  align-items: center;
+  padding: 5px;
+  width: 150px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--accent);
+  color: var(--text);
+  box-shadow: 0 0 10px var(--secondary-accent);
+  border: 1px solid var(--secondary-accent);
+  transition: 1s;
+  text-align: center;
+}
+select:focus {
+  outline: none;
+  background-color: var(--accent);
+}
 
-  .section {
-    gap:30px;
-    align-items:center;
-    justify-content:center;
-    border:solid 1px var(--secondary-accent);
-    width:100%;
-    height:100%;
-    transition:0.3s;
-    box-sizing: border-box;
-  }
+option {
+  font-family: "Figtree", sans-serif;
+}
 
+.section {
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px var(--secondary-accent);
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+  box-sizing: border-box;
+}
 
-  #content {
-      transition: filter 0.3s;
-  }
+#content {
+  transition: filter 0.3s;
+}
 
-  .section h3 {
-    margin:10px;
-  }
+.section h3 {
+  margin: 10px;
+  color: var(--text);
+}
 
-  button {
-    height:40px;
-    width:fit-content;
-    border:1px solid var(--secondary-accent);
-    background: var(--nav);
-    color:var(--text);
-    border-radius:6px;
-    font-family: 'Figtree', sans-serif;
-    margin:5px;
-    cursor:pointer;
-    padding: 10px;
-    text-align: center;
-    justify-content: center;
-    align-items:center;
-    transition:all 0.3s ease;
-  }
+button {
+  height: 40px;
+  width: fit-content;
+  border: 1px solid var(--secondary-accent);
+  background: var(--nav);
+  color: var(--text);
+  border-radius: 6px;
+  font-family: "Figtree", sans-serif;
+  margin: 5px;
+  cursor: pointer;
+  padding: 10px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
 
-  button:hover {
-    transform:scale(1.05);
-  }
+button:hover {
+  transform: scale(1.05);
+}
 
-  #titleInput, #faviconInput {
-width:250px;
-height:30px;
-border:1px solid var(--secondary-accent);
-border-radius:5px;
-padding-left: 15px;
-margin:5px;
-  }
+#titleInput,
+#faviconInput {
+  width: 250px;
+  height: 30px;
+  border: 1px solid var(--secondary-accent);
+  border-radius: 5px;
+  padding-left: 15px;
+  margin: 5px;
+}
 
-  .tip {
-    border-radius:5px;
-    width:230px;
-    padding: 20px;
-    color:var(--text);
-    background-color: var(--secondary-accent);
-    box-shadow: 0 1px 8px var(--accent);
-    opacity: 1;
-    transition: opacity 1s ease-in-out;
-    transition:1s;
-    bottom:15px;
-    right:15px;
-    position:fixed;
-  }
-  
-  .tip:hover {
-    transform:translateY(-1.1rem);
-  }
-  
-  .tip.fade-out {
-    opacity: 0;
-  }
+.tip {
+  border-radius: 5px;
+  width: 230px;
+  padding: 20px;
+  color: var(--text);
+  background-color: var(--secondary-accent);
+  box-shadow: 0 1px 8px var(--accent);
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+  transition: 1s;
+  bottom: 15px;
+  right: 15px;
+  position: fixed;
+}
+
+.tip:hover {
+  transform: translateY(-1.1rem);
+}
+
+.tip.fade-out {
+  opacity: 0;
+}
+
+.highlight {
+  background-color: var(--accent-lol);
+  border-radius: 10px;
+  height: 40px;
+  width: 100px;
+}
+
+#redirectForm input {
+  border: 1px solid var(--secondary-accent);
+  height:25px;
+  border-radius:5px;
+}

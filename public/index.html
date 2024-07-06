@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Core</title>
-    <link id="favicon" rel="icon" type="image/x-icon" href="./resources/images/main.png">
+    <link id="favicon" rel="icon" type="image/x-icon" href="/resources/images/main.png">
     <link rel="stylesheet" href="./resources/css/main.css" />
     <link rel="stylesheet" href="./resources/css/navbar.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -12,7 +12,7 @@
 
 </head>
 <body theme="main">
-    <div class="tip"><i class="fa-regular fa-message-exclamation"></i> Tip: Press the "y" key to toggle the navbar menu! <br> "Nah, core will win 🗣️🔥"</div>
+    <div class="tip"><i class="fa-regular fa-message-exclamation"></i> Tip: Press the slash key (/) key to toggle the navbar menu! <br> "Nah, core will win 🗣️🔥"</div>
     <div class="settings-tab" id="settingsTab">
         <div class="section">
         <div onclick="closeSettings()"><img id="close" class="icons" src="./resources/images/icons/close.png"></div>
@@ -20,7 +20,12 @@
          <select id="theme-select">
              <option value="main">Main Theme</option>
              <option value="mocha">Cappuchin Mocha</option>
-             <option value="light">Light Theme</option>
+             <option value="light">Light Mode</option>
+             <option value="black">Dark Mode</option>
+             <option value="frappe">Cappuchin Frappe</option>
+             <option value="latte">Cappuchin Frappe</option>
+             <option value="rogue-red">Rogue</option>
+             <option value="AYO">The Hub</option>
          </select>
          <h3>About:Blank Cloaking</h3>
          <button onclick="openIframe();">About:Blank Cloak</button>
@@ -34,6 +39,13 @@
          <br style="margin:100px;">
          <button onclick="applyCloak()">Apply</button>
          <button onclick="resetCloak()">Reset Cloak</button>
+         <h3>Emergency Cloak</h3>
+         <form id="redirectForm">
+            <input type="text" id="key" placeholder="ex. /" name="key" maxlength="1" required><br><br>
+            <input type="url" id="url" placeholder="ex. https://google.com" name="url" required><br><br>
+            <button type="submit">Set Redirect</button>
+            <button id="resetButton">Reset All Redirects</button>
+        </form>
          </div>
         </div>
     <div class="menu hidden" id="menu">
@@ -54,7 +66,7 @@
     </div>
     <div id="content">
 <div class="center">
-    <h1>Core</h1>
+    <h1>Co<span class="highlight">re</span></h1>
     <div class="search-container">
         <div class="search-icon">
             <i class="fa-thin fa-magnifying-glass"></i>
@@ -95,7 +107,7 @@ function resetCloak() {
 const menu = document.getElementById('menu');
 
 document.addEventListener('keydown', function(e) {
-    if (e.key.toLowerCase() === 'y') {
+    if (e.key.toLowerCase() === '/') {
         menu.classList.toggle("hidden");
         
         if (menu.classList.contains("hidden")) {
@@ -121,4 +133,5 @@ function closeSettings() {
 <script src="./resources/js/tip.js"></script>
 <script src="./resources/js/settings/ab.js"></script>
 <script src="./resources/js/settings/auto.js"></script>
+<script src="./resources/js/settings/panic.js"></script>
 </html>
