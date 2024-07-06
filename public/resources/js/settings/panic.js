@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const redirectKey = keyInput.value.toLowerCase();
         let redirectUrl = urlInput.value;
 
-        if (redirectKey === '/') {
-            alert('The key "/" is disabled, for it is to toggle the navbar. Try another one.');
+        if (redirectKey === '=') {
+            alert('The key "=" is disabled, for it is to toggle the navbar. Try another one.');
             return;
         }
 
