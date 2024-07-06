@@ -67,7 +67,7 @@ input::placeholder {
 
 .settings-tab {
   position: fixed;
-  top: 64%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: var(--accent);
@@ -98,7 +98,7 @@ input::placeholder {
 select {
   font-family: "Figtree", sans-serif;
   align-items: center;
-  padding: 5px;
+  padding: 2px;
   width: 150px;
   border: none;
   border-radius: 5px;
