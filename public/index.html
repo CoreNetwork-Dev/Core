@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/all.css">
 </head>
 <body theme="main">
+    <div class="tip"><i class="fa-regular fa-message-exclamation"></i> Tip: Press the "y" key to toggle the navbar menu!</div>
     <div class="settings-tab" id="settingsTab">
         <div class="section">
         <div onclick="closeSettings()"><img id="close" class="icons" src="./resources/images/icons/close.png"></div>
@@ -53,6 +54,7 @@
     <div id="content">
 <div class="center">
     <h1>Core</h1>
+    <p style="text-align:center;margin:15px;">"Nah, core will win 🗣️🔥"</p>
     <div class="search-container">
         <div class="search-icon">
             <i class="fa-thin fa-magnifying-glass"></i>
@@ -93,7 +95,7 @@ function resetCloak() {
 const menu = document.getElementById('menu');
 
 document.addEventListener('keydown', function(e) {
-    if (e.key.toLowerCase() === '/') {
+    if (e.key.toLowerCase() === 'y') {
         menu.classList.toggle("hidden");
         
         if (menu.classList.contains("hidden")) {
@@ -116,6 +118,7 @@ function closeSettings() {
 </script>
 <script src="./resources/js/time.js"></script>
 <script src="./resources/js/themes.js"></script>
+<script src="./resources/js/tip.js"></script>
 <script src="./resources/js/settings/ab.js"></script>
 <script src="./resources/js/settings/auto.js"></script>
 </html>

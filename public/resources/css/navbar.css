@@ -37,11 +37,13 @@
 }
 .home {
   border-radius: 50%;
+  cursor:pointer;
 }
 .apps {
   border-radius: 50%;
   position:absolute;
   right:55px;
+  cursor:pointer;
 }
 
 .settings {
@@ -49,6 +51,7 @@
   transition:0.5s;
   right:25px;
   position:absolute;
+  cursor:pointer;
 }
 
 .settings:hover {
