@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
-@import url("/public/resources/css/themes.css");
+@import url("/resources/css/themes.css");
 * {
   padding: 0;
   margin: 0;
@@ -67,7 +67,7 @@ input::placeholder {
 
 .settings-tab {
   position: fixed;
-  top: 45%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: var(--accent);

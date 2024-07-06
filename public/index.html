@@ -4,18 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Core</title>
-    <link id="favicon" rel="icon" type="image/x-icon" href="/resources/images/main.png">
-    <link rel="stylesheet" href="./resources/css/main.css" />
-    <link rel="stylesheet" href="./resources/css/navbar.css" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="resources/images/main.png">
+    <link rel="stylesheet" href="/resources/css/main.css" />
+    <link rel="stylesheet" href="/resources/css/navbar.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/all.css">
 
 </head>
 <body theme="main">
-    <div class="tip"><i class="fa-regular fa-message-exclamation"></i> Tip: Press the equal key (=) to toggle the navbar menu! <br> "Nah, core will win 🗣️🔥"</div>
     <div class="settings-tab" id="settingsTab">
         <div class="section">
-        <div onclick="closeSettings()"><img id="close" class="icons" src="./resources/images/icons/close.png"></div>
+        <div onclick="closeSettings()"><img id="close" class="icons" src="resources/images/icons/close.png"></div>
          <h3>Themes</h3>
          <select id="theme-select">
              <option value="main">Main Theme</option>
@@ -23,7 +22,7 @@
              <option value="light">Light Mode</option>
              <option value="black">Dark Mode</option>
              <option value="frappe">Cappuchin Frappe</option>
-             <option value="latte">Cappuchin Frappe</option>
+             <option value="latte">Cappuchin Latte</option>
              <option value="rogue-red">Rogue</option>
              <option value="AYO">The Hub</option>
          </select>
@@ -58,16 +57,16 @@
     <div class="menu hidden" id="menu">
         <div class="grid">
             <div class="icon home">
-                <img src="./resources/images/main.png">
+                <img src="resources/images/main.png">
             </div>
             <div id="time">
                 <p id="time-text"></p>
                 </div>
                 <div onclick="openSettings()" class="icon settings">
-                    <img src="./resources/images/icons/settings.png">
+                    <img src="resources/images/icons/settings.png">
                 </div>
             <div id="launchApps" class="icon apps">
-                <img src="./resources/images/icons/apps.png">
+                <img src="resources/images/icons/apps.png">
             </div>
         </div>
     </div>
@@ -116,12 +115,6 @@ const menu = document.getElementById('menu');
 document.addEventListener('keydown', function(e) {
     if (e.key.toLowerCase() === '=') {
         menu.classList.toggle("hidden");
-        
-        if (menu.classList.contains("hidden")) {
-            menu.style.pointerEvents = "none";
-        } else {
-            menu.style.pointerEvents = "auto";
-        }
     }
 });
 
@@ -135,10 +128,10 @@ function closeSettings() {
   document.getElementById('content').style.filter = 'none';
 }
 </script>
-<script src="./resources/js/time.js"></script>
-<script src="./resources/js/themes.js"></script>
-<script src="./resources/js/tip.js"></script>
-<script src="./resources/js/settings/ab.js"></script>
-<script src="./resources/js/settings/auto.js"></script>
-<script src="./resources/js/settings/panic.js"></script>
+<script src="resources/js/time.js"></script>
+<script src="resources/js/themes.js"></script>
+<script src="resources/js/tip.js"></script>
+<script src="resources/js/settings/ab.js"></script>
+<script src="resources/js/settings/auto.js"></script>
+<script src="resources/js/settings/panic.js"></script>
 </html>
