@@ -62,6 +62,7 @@ input::placeholder {
   transform: translateY(-50%);
   pointer-events: none;
   cursor: default;
+  background:var(--accent-lol);
 }
 
 .settings-tab {
@@ -126,6 +127,8 @@ option {
   height: 100%;
   transition: 0.3s;
   box-sizing: border-box;
+  overflow-y:auto;
+  overflow-x:hidden;
 }
 
 #content {
@@ -202,4 +205,44 @@ button:hover {
   border: 1px solid var(--secondary-accent);
   height:25px;
   border-radius:5px;
+}
+
+#appTab {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--accent);
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  display: none;
+  z-index: 999;
+  width: 45%;
+  height: 500px;
+  text-align: center;
+  overflow-y: auto;
+}
+
+.app {
+  margin: 10px;
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.apps-container {
+  overflow-y: auto;
+  max-height: 450px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+#appTab h3 {
+  margin: 10px;
+  color: var(--text);
 }
