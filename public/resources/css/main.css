@@ -4,6 +4,26 @@
   padding: 0;
   margin: 0;
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+    outline: 1px solid var(--nav);
+    border-radius:5px;
+}
+
+::-webkit-scrollbar-track {
+  border:0.5px solid var(--nav);
+  background: var(--accent);
+  border-radius:5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-accent);
+    border-radius: 20px;
+    outline: 1px solid var(--text);
+    border:0.5px solid var(--nav);
+}
+
 body {
   background-color: var(--background);
   color: var(--text);
