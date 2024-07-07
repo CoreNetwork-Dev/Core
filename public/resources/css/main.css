@@ -118,7 +118,7 @@ input::placeholder {
 select {
   font-family: "Figtree", sans-serif;
   align-items: center;
-  padding: 2px;
+  padding: 10px;
   width: 150px;
   border: none;
   border-radius: 5px;
