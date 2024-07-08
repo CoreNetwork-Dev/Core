@@ -5,6 +5,7 @@
   "type": "module",
   "main": "server/index.js",
   "scripts": {
+    "install": "npm i",
     "start": "node server/index.js"
   },
   "author": "GalacticNetwork",
