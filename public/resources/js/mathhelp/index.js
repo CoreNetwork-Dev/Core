@@ -21,7 +21,7 @@ form.addEventListener("submit", async (event) => {
     throw err;
   }
 
-  const url = search(address.value, "https://www.duckduckgo.com/search?q=%s");
+  const url = search(address.value, "https://www.google.com/search?q=%s");
 
   sessionStorage.setItem("url", __uv$config.prefix + __uv$config.encodeUrl(url))
   location.href = "/go/"
