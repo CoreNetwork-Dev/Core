@@ -47,8 +47,14 @@
         height: 70px;
       }
 
-      .nav input {
+      .search-container {
+        position:fixed;
+        left:50%;
+      }
+
+      .nav .search-container #uv-form input {
         height: 40px;
+        float:center;
       }
       .nav:hover {
         transform: translateY(25px);
@@ -75,6 +81,7 @@
         justify-content: center;
       }
       .nav .buttonrow1 .btn {
+        top:0;
         width: 50px;
         height: 50px;
         background-color: var(--accent);
@@ -147,7 +154,8 @@
         color: var(--text);
         height: 30px;
         transition: color 100ms;
-        margin: 10px;
+        float:center;
+        transform: translate(-50%);
       }
       input::placeholder {
         text-align: center;
@@ -170,7 +178,7 @@
       <div class="buttonrow1">
         <a href="/">
           <div class="icon home">
-            <img style="margin: 10px" src="/resources/images/main.png" />
+            <img style="margin: 1px" src="/resources/images/main.png" />
           </div>
         </a>
         <button class="btn" onclick="inspect();">
@@ -183,9 +191,11 @@
           <i class="fa-solid fa-expand"></i>
         </button>
       </div>
-      <form id="uv-form">
-        <input class="input" id="uv-address" type="text" placeholder="What's On Your Mind?" class="search" autocomplete="off"/>
+      <div class="search-container">
+        <form id="uv-form">
+        <input id="uv-address" type="text" placeholder="What's On Your Mind?" class="search" autocomplete="off"/>
       </form>
+    </div>
       <div class="buttonrow2">
         <button class="btn" onclick="back();"><i class="fa-solid fa-chevron-left"></i></button>
         <button class="btn" onclick="reload();"><i class="fa-solid fa-arrows-rotate"></i></button>
