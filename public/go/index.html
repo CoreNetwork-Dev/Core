@@ -29,6 +29,10 @@
         overflow: hidden;
       }
 
+      .eruda-container__chobitsu-hide__eruda-dark {
+        margin:0;
+      }
+
       i {
         color: white;
       }
@@ -156,6 +160,7 @@
         transition: color 100ms;
         float:center;
         transform: translate(-50%);
+        margin:5px;
       }
       input::placeholder {
         text-align: center;
@@ -171,6 +176,52 @@
         width: 100vw;
         overflow-x: hidden;
       }
+      #popupMenu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 5px;
+    background-color: var(--accent);
+    border: 1px solid var(--secondary-accent);
+    box-shadow: 0px 8px 16px var(--secondary-accent);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    margin:10px;
+}
+
+#popupMenu.show {
+border-radius:15px;
+  float:right;
+    display: block;
+    opacity: 1;
+}
+
+#popupMenu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#popupMenu li {
+    padding: 10px;
+    border-bottom: 1px solid var(--accent);
+    transition:0.6s ease;
+}
+
+#popupMenu li:last-child {
+    border-bottom: none;
+}
+
+#popupMenu li a {
+    text-decoration: none;
+    color: var(--text);
+    display: block;
+}
+
+#popupMenu li:hover {
+    background-color: var(--secondary-accent);
+}
     </style>
   </head>
   <body theme="main">
@@ -178,7 +229,7 @@
       <div class="buttonrow1">
         <a href="/">
           <div class="icon home">
-            <img style="margin: 1px" src="/resources/images/main.png" />
+            <img src="/resources/images/main.png" />
           </div>
         </a>
         <button class="btn" onclick="inspect();">
@@ -200,7 +251,15 @@
         <button class="btn" onclick="back();"><i class="fa-solid fa-chevron-left"></i></button>
         <button class="btn" onclick="reload();"><i class="fa-solid fa-arrows-rotate"></i></button>
         <button class="btn" onclick="forward();"><i class="fa-solid fa-chevron-right"></i></button>
-        <button class="btn"><i class="fa-solid fa-bars"></i></button>
+        <button id="navMenu" class="btn"><i class="fa-solid fa-bars"></i></button>
+        <div id="popupMenu">
+          <ul>
+            <li><a href="/">Go Home</a></li>
+            <li><a href="#" onclick="buffedAB()">BUFFED About:Blank</a></li>
+            <li><a href="javascript:onbeforeunload=i=>1">Anti-Tab Close</a></li>
+            <li><a href="#">Item 4</a></li>
+          </ul>
+      </div>
       </div>
     </div>
     <iframe
@@ -289,5 +348,49 @@
         console.log(encodedUrl)
         document.querySelector('#searchFrame').src = encodedUrl
       }
+      document.getElementById('navMenu').addEventListener('click', function() {
+    var menu = document.getElementById('popupMenu');
+    if (menu.classList.contains('show')) {
+        menu.classList.remove('show');
+        setTimeout(function() {
+            menu.style.display = 'none';
+        }, 300);
+    } else {
+        menu.style.display = 'block';
+        setTimeout(function() {
+            menu.classList.add('show');
+        }, 10);
+    }
+});
+
+document.addEventListener('click', function(event) {
+    var menu = document.getElementById('popupMenu');
+    var button = document.getElementById('navMenu');
+    if (!button.contains(event.target) && !menu.contains(event.target)) {
+        menu.classList.remove('show');
+        setTimeout(function() {
+            menu.style.display = 'none';
+        }, 300);
+    }
+});
+function buffedIframe() {
+    var myWindow1 = window.open(
+        "",
+        "myWindow1",
+        "scrollbars=1,height=" + screen.availHeight + ",width=" + screen.availWidth
+    );
+    myWindow1.document.write(
+        '<!DOCTYPE html>\n' +
+        '<title>Classes</title>\n' +
+        '<link rel="icon" href="https://ssl.gstatic.com/classroom/favicon.png"/>\n' +
+        '<link rel="shortcut icon" href="https://ssl.gstatic.com/classroom/favicon.png"/>\n' +
+        '<iframe src="' + window.location.href + '" ' +
+        'frameborder="0" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:100%;width:100%;position:absolute;top:0px;left:0px;right:0px;bottom:0px;" ' +
+        'height="100%" width="100%"></iframe>\n' +
+        '<script>alert("About:Blank was buffed!");<\/script>'
+    );
+    myWindow1.document.close();
+    window.location.replace("https://nasa.gov");
+}
   </script>
 </html>

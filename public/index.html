@@ -70,12 +70,14 @@
             <button id="resetButton">Reset All Redirects</button>
         </form>
         <h3>Search engine switch</h3>
-        <button>Google</button>
-        <button>DuckDuckGO</button>
-        <button>Brave</button>
-        <button>Bing</button>
-        <button>Yahoo</button>
-        <button>SearXNG</button>
+        <select id="search-engine" class="select">
+            <option value="https://search.inetol.net/search?q=">SearXNG</option>
+            <option value="https://google.com/search?q=">Google</option>
+            <option value="https://search.brave.com/search?q=">Brave</option>
+            <option value="https://bing.com/search?q=">Bing</option>
+            <option value="https://yahoo.com/search?q=">Yahoo</option>
+            <option value="https://duckduckgo.com/search?q=">DuckDuckGo</option>
+        </select>
          </div>
         </div>
     <div class="menu hidden" id="menu">
@@ -98,7 +100,7 @@
 <div class="center">
     <h1>Co<span class="highlight">re</span></h1>
     <div class="search-container">
-        <form id="uv-form">
+        <form id="uv-form" onsubmit="return false;">
             <input class="input" id="uv-address" type="text" placeholder="What's On Your Mind?" class="search" autocomplete="off"/>
           </form>
     <div class="search-icon">
@@ -165,6 +167,46 @@ function openSettings() {
       document.getElementById('appTab').style.display = 'none';
       document.getElementById('content').style.filter = 'none';
     }
+</script>
+<script>
+     document.addEventListener('DOMContentLoaded', (event) => {
+            const searchEngineSelect = document.getElementById('search-engine');
+            searchEngineSelect.addEventListener('change', () => {
+                const selectedOptions = Array.from(searchEngineSelect.selectedOptions).map(option => option.value);
+                localStorage.setItem('selectedEngines', JSON.stringify(selectedOptions));
+            });
+
+            const inputField = document.getElementById('uv-address');
+            inputField.addEventListener('keypress', function(event) {
+                if (event.key === 'Enter') {
+                    performSearch(inputField.value.trim());
+                }
+            });
+
+            const savedEngines = JSON.parse(localStorage.getItem('selectedEngines')) || [];
+            savedEngines.forEach(engine => {
+                for (let option of searchEngineSelect.options) {
+                    if (option.value === engine) {
+                        option.selected = true;
+                        break;
+                    }
+                }
+            });
+        });
+
+        function performSearch(query) {
+            const selectedEngines = JSON.parse(localStorage.getItem('selectedEngines')) || [];
+            const searchUrls = [];
+
+            if (query && selectedEngines.length > 0) {
+                selectedEngines.forEach(engine => {
+                    const searchUrl = engine + encodeURIComponent(query);
+                    searchUrls.push(searchUrl);
+                });
+            }
+
+            console.log('Search URLs:', searchUrls);
+        }
 </script>
 <script src="resources/js/time.js"></script>
 <script src="resources/js/themes.js"></script>
