@@ -35,7 +35,7 @@ body[theme="latte"] {
     --text:#F4E0DB;
     --nav:#5E5151;
     --accent:#7A6969;
-    --secondary-accent:AFA4A4;
+    --secondary-accent: #AFA4A4;
 }
 
 body[theme="rogue-red"] {
@@ -60,5 +60,5 @@ body[theme="black"] {
     --text:white;
     --nav:gray;
     --accent:lightgray;
-    --secondary-accent:rgb(237, 228, 228);
+    --secondary-accent:rgb(0, 0, 0);
 }
