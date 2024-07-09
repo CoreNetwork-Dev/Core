@@ -253,6 +253,36 @@ button:hover {
   display: inline-block;
 }
 
+.app:hover {
+  transform:rotate(25deg);
+  animation: enlarge 0.3s ease-in-out;
+  animation-fill-mode: both;
+  box-shadow:0px 0px 10px 10px var(--text);
+}
+
+@keyframes enlarge {
+  0% {
+    transform: scale(1.05);
+  }
+
+  25% {
+    transform: scale(1.06);
+  }
+
+  50% {
+    transform:scale(1.07);
+  }
+
+  75% {
+    transform:scale(1.09);
+  }
+
+  100% {
+    transform:rotate(25deg);
+    transform: scale(1.17);
+  }
+}
+
 .apps-container {
   overflow-y: auto;
   max-height: 450px;

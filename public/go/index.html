@@ -222,6 +222,13 @@ border-radius:15px;
 #popupMenu li:hover {
     background-color: var(--secondary-accent);
 }
+#history {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
     </style>
   </head>
   <body theme="main">
@@ -254,10 +261,10 @@ border-radius:15px;
         <button id="navMenu" class="btn"><i class="fa-solid fa-bars"></i></button>
         <div id="popupMenu">
           <ul>
-            <li><a href="/">Go Home</a></li>
+            <li><a href="#" onclick="print();">Print</a></li>
             <li><a href="#" onclick="buffedAB()">BUFFED About:Blank</a></li>
             <li><a href="javascript:onbeforeunload=i=>1">Anti-Tab Close</a></li>
-            <li><a href="#">Item 4</a></li>
+            <li><a href="#" onclick="openIframeContent();" id="historyButton">Open search in new tab</a></li>
           </ul>
       </div>
       </div>
@@ -276,7 +283,7 @@ border-radius:15px;
       width="100%"
       allowfullscreen
     ></iframe>
-    <script></script>
+    <div id="history"></div>
   </body>
   <script src="/resources/js/themes.js"></script>
   <script>
@@ -392,5 +399,17 @@ function buffedIframe() {
     myWindow1.document.close();
     window.location.replace("https://nasa.gov");
 }
+  </script>
+  <script>
+function print() {
+var frame = document.getElementById("searchFrame")
+frame.contentWindow.focus()
+frame.contentWindow.print()
+}
+function openContent() {
+            var iframe = document.getElementById('searchFrame');
+            var iframeSrc = iframe.src;
+            window.open(iframeSrc, '_blank');
+        }
   </script>
 </html>

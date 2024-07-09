@@ -21,17 +21,17 @@
     <div id="appTab">
         <div class="section">
         <div onclick="closeApps()"><img id="close" class="icons" src="resources/images/icons/close.png"></div>
-        <h3>Apps</h3>
+        <h3>Apps/Quick Search</h3>
         <div align="center">
         <div class="app-container">
-        <img class="app" src="/resources/images/apps/google.png">
-        <img class="app" src="/resources/images/apps/google.png">
-        <img class="app" src="/resources/images/apps/google.png">
-        <img class="app" src="/resources/images/apps/google.png">
-        <img class="app" src="/resources/images/apps/google.png">
-        <img class="app" src="/resources/images/apps/google.png">
-        <img class="app" src="/resources/images/apps/google.png">
-        <img class="app" src="/resources/images/apps/google.png">
+        <img class="app" onclick="goto('https://google.com');" src="/resources/images/apps/google.png">
+        <img class="app" onclick="goto('https://twitch.tv');" src="/resources/images/apps/twitch.jpg">
+        <img class="app" onclick="goto('https://crazygames.com');" src="/resources/images/apps/cg.png">
+        <img class="app" onclick="goto('https://coolmathgames.com');" src="/resources/images/apps/cmg.webp">
+        <img class="app" onclick="goto('https://luna.amazon.com');" src="/resources/images/apps/amazon-luna.png">
+        <img class="app" onclick="goto('https://cybria-gg-ebon.vercel.app/apps/aptoide/5874/aptoide-2.html');" src="/resources/images/apps/aptoide.png">
+        <img class="app" onclick="goto('https://chess.com');" src="/resources/images/apps/chess.jpg">
+        <img class="app" onclick="goto('https://nunflix.com');" src="/resources/images/apps/nunflix.jpg">
     </div>
     </div>
     </div>
@@ -91,7 +91,7 @@
 <div class="center">
     <h1>Co<span class="highlight">re</span></h1>
     <div class="search-container">
-        <form id="uv-form" onsubmit="return false;">
+        <form id="uv-form">
             <input class="input" id="uv-address" type="text" placeholder="What's On Your Mind?" class="search" autocomplete="off"/>
           </form>
     <div class="search-icon">
@@ -158,46 +158,6 @@ function openSettings() {
       document.getElementById('appTab').style.display = 'none';
       document.getElementById('content').style.filter = 'none';
     }
-</script>
-<script>
-     document.addEventListener('DOMContentLoaded', (event) => {
-            const searchEngineSelect = document.getElementById('search-engine');
-            searchEngineSelect.addEventListener('change', () => {
-                const selectedOptions = Array.from(searchEngineSelect.selectedOptions).map(option => option.value);
-                localStorage.setItem('selectedEngines', JSON.stringify(selectedOptions));
-            });
-
-            const inputField = document.getElementById('uv-address');
-            inputField.addEventListener('keypress', function(event) {
-                if (event.key === 'Enter') {
-                    performSearch(inputField.value.trim());
-                }
-            });
-
-            const savedEngines = JSON.parse(localStorage.getItem('selectedEngines')) || [];
-            savedEngines.forEach(engine => {
-                for (let option of searchEngineSelect.options) {
-                    if (option.value === engine) {
-                        option.selected = true;
-                        break;
-                    }
-                }
-            });
-        });
-
-        function performSearch(query) {
-            const selectedEngines = JSON.parse(localStorage.getItem('selectedEngines')) || [];
-            const searchUrls = [];
-
-            if (query && selectedEngines.length > 0) {
-                selectedEngines.forEach(engine => {
-                    const searchUrl = engine + encodeURIComponent(query);
-                    searchUrls.push(searchUrl);
-                });
-            }
-
-            console.log('Search URLs:', searchUrls);
-        }
 </script>
 <script src="resources/js/time.js"></script>
 <script src="resources/js/themes.js"></script>
