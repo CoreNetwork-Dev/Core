@@ -43,7 +43,7 @@
         text-align: center;
         width: 100%;
         position: absolute;
-        top: -20px;
+        top: -25px;
         left: 0;
         right: 0;
         background: var(--background);
@@ -265,7 +265,8 @@ border-radius:15px;
             <li><a href="#" onclick="print();">Print</a></li>
             <li><a href="#" onclick="buffedAB()">BUFFED About:Blank</a></li>
             <li><a href="javascript:onbeforeunload=i=>1">Anti-Tab Close</a></li>
-            <li><a href="#" onclick="openContent();" id="historyButton">Open search in new tab</a></li>
+            <li><a href="#" onclick="openContent();">Open search in new tab</a></li>
+            <li><a href="#" id="fullscreenButton">Fullscreen Window (not iframe)</a></li>
           </ul>
       </div>
       </div>
@@ -400,8 +401,8 @@ function buffedIframe() {
     myWindow1.document.close();
     window.location.replace("https://nasa.gov");
 }
-  </script>
-  <script>
+</script>
+<script>
 function print() {
 var frame = document.getElementById("searchFrame")
 frame.contentWindow.focus()
@@ -412,5 +413,19 @@ function openContent() {
             var iframeSrc = iframe.src;
             window.open(iframeSrc, '_blank');
         }
+  </script>
+  <script>
+      document.getElementById('fullscreenButton').addEventListener('click', function() {
+            let elem = document.documentElement;
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.mozRequestFullScreen) {
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) {
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) {
+                elem.msRequestFullscreen();
+            }
+        });
   </script>
 </html>
