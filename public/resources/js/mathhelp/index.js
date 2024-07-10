@@ -15,6 +15,8 @@ form.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   try {
+    let wispUrl = (location.protocol === "https:" ? "wss" : "ws") + "://" + location.host + "/wisp/";
+    BareMux.SetTransport("EpxMod.EpoxyClient", { wisp: wispUrl });
     await registerSW();
   } catch (err) {
     console.log(err);
