@@ -12,7 +12,7 @@
 - About:blank cloaking
 - Tab Cloaking
 - Theme Toggling
-- Panic Setitng
+- Panic Setting
 - Quick searching
 - Eruda (inspect element)
 
@@ -35,5 +35,5 @@
 - <a href="//github.com/slqntdevss">Slqnt - themes, javascript, ultraviolet</a>
 - <a href="//github.com/e9x">Susshi - Ultraviolet</a>
 - <a href="//github.com/slqntdevss">TwoMuchRed - UI Designer</a>
-- <a href="//github.com/JustJxrdanWasDefinetlyTaken">Kendrick Lamar/KDev/Jordan - CSS, Ultraviolet, javascript</a>
+- <a href="//github.com/JustJxrdanWasDefinetlyTaken">Kendrick Lamar/KDev/Jordan - CSS, Ultraviolet, javascript, owner of project</a>
 - <a href="//github.com/nobodycares-lo">NobodyCares - Ultraviolet</a>
