@@ -4,7 +4,7 @@
 <h1 align="center">Core</h1>
 <p align="center">Core is an innovative and minimalistic proxy with many features for the users experience. Made for Proxathon 2024</p>
 
-# Core has many features, like:
+## Features
 - Proxy frame functioning
 - Blazing Speeds
 - Clean and Smooth UI
@@ -16,24 +16,21 @@
 - Quick searching
 - Eruda (inspect element)
 
-# To run Core (not on a vps lmfao) follow these steps:
-### Clone the github
-`git clone https://github.com/CoreNetwork-dev/Core`
+## Installation
+To run Core, you need to have Node.js installed. If you don't have it installed, you can download it [here](https://nodejs.org/en/).
 
-### Mention the directory:
-`cd Core`
+Then just use the commands below to get started.
+```
+git clone https://github.com/CoreNetwork-dev/Core
+cd Core
+npm install
+npm start
+```
 
-### Install the packages:
-`npm install`
-
-### Start Node
-`node server/index.js`
-> `npm start` is also fine
-
-# Credits
-## Credit to:
-- <a href="//github.com/slqntdevss">Slqnt - themes, javascript, ultraviolet</a>
-- <a href="//github.com/e9x">Susshi - Ultraviolet</a>
-- <a href="//github.com/slqntdevss">TwoMuchRed - UI Designer</a>
-- <a href="//github.com/JustJxrdanWasDefinetlyTaken">Kendrick Lamar/KDev/Jordan - CSS, Ultraviolet, javascript, owner of project</a>
-- <a href="//github.com/nobodycares-lo">NobodyCares - Ultraviolet</a>
+## Credits
+- [Slqnt](//github.com/slqntdevss) - themes, javascript, ultraviolet
+- [Susshi](//github.com/e9x) - Ultraviolet
+- [TwoMuchRed](//github.com/slqntdevss) - UI Designer
+- [Kendrick Lamar/KDev/Jordan](//github.com/JustJxrdanWasDefinetlyTaken) - CSS, Ultraviolet, javascript, owner of project
+- [NobodyCares](//github.com/nobodycares-lo) - Ultraviolet
+- [3kh0](//github.com/3kh0) - Minor fixes
