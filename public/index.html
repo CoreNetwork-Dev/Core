@@ -18,7 +18,7 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body theme="main">
-    <div class="tip"><i class="fa-solid fa-envelope-open-text"></i> Tip: Press the equal key (=) to toggle the navbar!</div>
+    <div class="tip"><i class="fa-solid fa-envelope-open-text"></i> Tip: Press the equal key (=) or the toggle menu button to toggle the navbar!</div>
     <div id="appTab">
         <div class="section">
         <div onclick="closeApps()"><img id="close" class="icons" src="resources/images/icons/close.png"></div>
@@ -103,6 +103,9 @@
 </div> 
 </div>
 </div>
+<div class="ccenter">
+<button id="toggleMenuButton">Toggle Menu</button>
+</div>
 </body>
 <script>
    let initialTitle = document.title;
@@ -132,13 +135,18 @@ function resetCloak() {
 
 </script>
 <script>
-const menu = document.getElementById('menu');
+    const menu = document.getElementById('menu');
+    const toggleMenuButton = document.getElementById('toggleMenuButton');
 
-document.addEventListener('keydown', function(e) {
-    if (e.key.toLowerCase() === '=') {
+    document.addEventListener('keydown', function(e) {
+        if (e.key.toLowerCase() === '=') {
+            menu.classList.toggle("hidden");
+        }
+    });
+
+    toggleMenuButton.addEventListener('click', function() {
         menu.classList.toggle("hidden");
-    }
-});
+    });
 
 function openSettings() {
       closeApps();

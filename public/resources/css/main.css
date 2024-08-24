@@ -160,6 +160,23 @@ option {
   color: var(--text);
 }
 
+@media (max-width:700px) {
+  input {
+    width:250px;
+  }
+  button {
+    width:50px;
+  }
+  .settings-tab {
+    width:600px;
+    height:400px;
+  }
+
+  .section {
+    height:400px;
+  }
+}
+
 button {
   height: 40px;
   width: fit-content;
@@ -295,4 +312,9 @@ button:hover {
 #appTab h3 {
   margin: 10px;
   color: var(--text);
+}
+
+.ccenter {
+  position:relative;
+  top:20%;
 }

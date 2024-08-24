@@ -43,13 +43,14 @@
         text-align: center;
         width: 100%;
         position: absolute;
-        top: -10px;
+        top: -1px;
         left: 0;
         right: 0;
         background: var(--background);
         position: fixed;
         transition: 0.6s;
         height: 70px;
+        margin:0;
       }
 
       .search-container {
@@ -139,13 +140,63 @@
           width: 30px;
           height: 30px;
         }
+
+.nav .buttonrow2 {
+  float:left;
+}
+
         .nav .buttonrow1 .btn {
-          width: 25px;
-          height: 25px;
+          width: 35px;
+          height: 35px;
         }
         .nav .buttonrow2 .btn {
-          width: 25px;
-          height: 25px;
+          width: 35px;
+          height: 35px;
+        }
+
+.search-container {
+ margin:30px;
+}
+
+.nav {
+  height:100px;
+}
+
+       .search-container input {
+          width:250px;
+        }
+      }
+
+      @media screen and (max-width:400px) {
+        .nav .title {
+          font-size: 1em;
+        }
+        .nav .icon img {
+          width: 30px;
+          height: 30px;
+        }
+
+.nav .buttonrow2 {
+  float:left;
+}
+
+        .nav .buttonrow1 .btn {
+          width: 20px;
+        }
+        .nav .buttonrow2 .btn {
+          width: 20px;
+        }
+
+.search-container {
+ right:50%;
+}
+
+.nav {
+  height:100px;
+}
+
+       .search-container input {
+          width:150px;
         }
       }
       input {
